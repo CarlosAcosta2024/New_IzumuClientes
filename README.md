@@ -21,10 +21,11 @@ Componentes del Proyecto
 
 1.	Base de Datos SQL Server: Maneja la persistencia de los datos de los clientes: en el repositorio se encuentran alojados en la carpeta con nombre: 01. Scripts_BD.zip, en esta carpeta se encuentra los scripts necesarios para la ejecución del proyecto. 
 
-2.	Microservicio en (Back-end).NET Core 8: Gestiona la lógica de negocio y expone operaciones CRUD de un servicio. 
+2.	Proyecto Microservice_Izumu: Microservicio en (Back-end).NET Core 8: Gestiona la lógica de negocio y expone operaciones CRUD de un servicio. 
 
-3.	Interfaz Gráfica – (Front-end) ASP.NET Core Razor Pages: Proporciona una interfaz de usuario para interactuar con el sistema, comunicándose con el microservicio para la gestión de clientes. 
-
+3. Proyecto IzumuClientes: 	Interfaz Gráfica – (Front-end) ASP.NET Core Razor Pages: Proporciona una interfaz de usuario para interactuar con el sistema, comunicándose con el microservicio para la gestión de clientes.
+   
+4. Proyecto MicroService_Izumu.Test: proyecto de pruebas unitarias con Nunit.
  
 
 Requisitos Previos: 
@@ -51,7 +52,7 @@ A. Configuración de la Base de Datos
 
   1.  Iniciar SQL Server y crear una nueva base de datos denominada DB_IZUMU. 
 
-  2.  En SQL Server Management Studio, ejecutar los scripts SQL ubicados en el archivo 01. Scripts_BD.zip para generar las tablas necesarias y procedimientos requeridos para ejecutar la solución. 
+  2.  En SQL Server Management Studio, ejecutar los scripts SQL ubicados en el archivo 01. Scripts_BD.zip para generar las tablas necesarias y procedimientos requeridos para  ejecutar la solución. 
 
 B. Configuración de la solución (IzumuClientes) 
 
