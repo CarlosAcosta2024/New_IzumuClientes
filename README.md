@@ -19,9 +19,9 @@ El objetivo de este documento es proporcionar una guía clara y detallada de la 
 
 Componentes del Proyecto 
 
-1.	Base de Datos SQL Server: Maneja la persistencia de los datos de los clientes: en el repositorio se encuentran alojados en la carpeta con nombre: 01. Scripts_BD.zip, en esta carpeta se encuentra los scripts necesarios para la ejecución del proyecto. 
+1.	Base de Datos SQL Server: Maneja la persistencia de los datos de los clientes: en el repositorio se encuentran alojados en la carpeta con nombre: 01. Scripts_BD.zip, descomprimir y ejecutar los scripts que son necesarios para la ejecución del proyecto. 
 
-2.	Proyecto Microservice_Izumu: Microservicio en (Back-end).NET Core 8: Gestiona la lógica de negocio y expone operaciones CRUD de un servicio. 
+2.	Proyecto Microservice_Izumu: Microservicio en (Back-end).NET Core 8: Gestiona la lógica de negocio y expone operaciones CRUD de un servicio. est proyecto se encuentra en Microservice_Izumu.zip descomprimir y adicionar a la solución.
 
 3. Proyecto IzumuClientes: 	Interfaz Gráfica – (Front-end) ASP.NET Core Razor Pages: Proporciona una interfaz de usuario para interactuar con el sistema, comunicándose con el microservicio para la gestión de clientes.
    
