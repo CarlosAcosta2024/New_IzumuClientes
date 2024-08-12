@@ -1,0 +1,82 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Clientes Izumu";
+}
+
+@if (TempData["SuccessMessage"] != null)
+
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+<div class="text-center">
+    <h1 class="display-4">ADMINISTRACION CLIENTES</h1>
+
+    <!-- Botón para agregar cliente -->
+    <a href="/AgregarCliente" class="btn btn-primary" style="background-color: blue; border-color: blue; margin-top: 20px;">Agregar Cliente</a>
+</div>
+
+<div class="table-responsive mt-4">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Tipo Documento</th>
+                <th>Número Documento</th>
+                <th>Fecha Nacimiento</th>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Primer Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>Dirección Residencia</th>
+                <th>Número Celular</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model.Clientes)
+            {
+                <tr>
+                    <td>@cliente.NombreTipoDocumento</td>
+                    <td>@cliente.NumeroDocumento</td>
+                    <td>@cliente.FechaNacimiento.ToString("yyyy-MM-dd")</td>
+                    <td>@cliente.PrimerNombre</td>
+                    <td>@cliente.SegundoNombre</td>
+                    <td>@cliente.PrimerApellido</td>
+                    <td>@cliente.SegundoApellido</td>
+                    <td>@cliente.DireccionResidencia</td>
+                    <td>@cliente.NumeroCelular</td>
+                    <td>@cliente.Email</td>
+                    <td class="text-center">
+                        <div class="d-flex justify-content-center">
+                            <!-- Redirección con datos prellenados -->
+                            <a href="/AgregarCliente?id=@cliente.Id&NombreTipoDocumento=@cliente.NombreTipoDocumento&NumeroDocumento=@cliente.NumeroDocumento&FechaNacimiento=@cliente.FechaNacimiento.ToString("yyyy-MM-dd")&PrimerNombre=@cliente.PrimerNombre&SegundoNombre=@cliente.SegundoNombre&PrimerApellido=@cliente.PrimerApellido&SegundoApellido=@cliente.SegundoApellido&DireccionResidencia=@cliente.DireccionResidencia&NumeroCelular=@cliente.NumeroCelular&Email=@cliente.Email&PlanId=@cliente.PlanId" class="btn btn-warning btn-sm me-2">Editar</a>
+
+                            <!-- Botón de eliminación con confirmación -->
+                            <form method="post" asp-page-handler="DeleteCliente" asp-route-id="@cliente.Id" onsubmit="return confirmarEliminacion();">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+
+
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function confirmarEliminacion() {
+        return confirm("¿Está seguro de eliminar este cliente?");
+    }
+</script>
